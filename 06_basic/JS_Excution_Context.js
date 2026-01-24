@@ -20,3 +20,35 @@ function addNum(num1, num2) {
 
 let result = addNum(val1, val2);
 let result2 = addNum(10, 5);
+
+// UnderStanding code line by
+
+// Step 1
+// Global Execution => this
+
+// Step 2
+// Memory Phase
+
+// Val1 = undefiend
+// Val2 = undefiend
+// addNum = defination
+// result1 = undefiend
+// result2 = undefiend
+
+// Step 3
+// Execution Phase
+
+// val1 = 10
+// val2 = 5
+// addNum = fir se ab addNum ke ander memory phase(new variable environment) ans execution phase(execution thread)
+// ||
+// ||
+// memory phase
+// Val1 = undefiend
+// Val2 = undefiend
+// total = undefiend
+// -------------------- ye box delete bhi hota hai after code run
+// execution phase
+// num1 = 10
+// num2 = 5
+// total = 15  ------->   ye total Global Execution

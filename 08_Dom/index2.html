@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom relations</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <div class="parent">
+      <div class="days">Monday</div>
+      <div class="days">Tuesday</div>
+      <div class="days">Wednesday</div>
+      <div class="days">Thusday</div>
+      <div class="days">Friday</div>
+      <div class="days">Satureday</div>
+      <div class="days">Sunday</div>
+    </div>
+  </body>
+  <script>
+    const parent = document.querySelector(".parent");
+    // console.log("Parent Element:", parent);
+    // console.log("Child Nodes:", parent.childNodes);
+    // console.log("Children Elements:", parent.children[1].innerHTML);
+
+    // for (let i = 0; i < parent.children.length; i++) {
+    //   console.log("Child Element " + i + ":", parent.children[i].innerHTML);
+    // }
+
+    parent.children[0].style.color.innerHTML = "orange";
+    // console.log(parent.firstElementChild.innerHTML);
+    // console.log(parent.lastElementChild.innerHTML);
+
+    const dayOne = document.querySelector(".days");
+    // console.log(dayOne);
+    // console.log("Next Sibling:", dayOne.nextElementSibling.innerHTML);
+    // console.log(
+    //   "Previous Sibling:",
+    //   dayOne.nextElementSibling.nextElementSibling.previousElementSibling,
+    // );
+
+    console.log("NODES: ", parent.childNodes); // includes text nodes (like spaces and line breaks)
+    console.log("ELEMENTS: ", parent.children); // only element nodes
+  </script>
+</html>

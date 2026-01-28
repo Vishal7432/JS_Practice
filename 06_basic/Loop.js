@@ -21,9 +21,9 @@ map.set("IN", "India");
 
 // console.log(map);
 
-for (const [key, value] of map) {
-  //   console.log(key, ":-", value);
-}
+// for (const [key, value] of map) {
+//   console.log(key, ":-", value);
+// }
 
 // const myObject = {
 //   game1: "NFS",
@@ -42,5 +42,69 @@ const myObject = {
 };
 
 for (const key in myObject) {
-  console.log(myObject[key]);
+  // console.log(key);
+  // console.log(myObject[key]);
 }
+
+// const programing = ["js", "rb", "py", "java", "cpp"];
+
+// for (const key in [programing]) {
+//   console.log(key);
+//   console.log(programing[key]);
+// }
+
+// const map = new Map();
+// map.set("IN", "India");
+// map.set("USA", "United States of America");
+// map.set("Fr", "France");
+// map.set("IN", "India");
+
+// for (const [key, value] in map) {
+//   console.log(key, `:-`, value);
+// }
+
+// ++++++++++++++++++++++++++++++++++++++ High Order function ++++++++++++++++++++++++++
+
+const codings = ["js", "rb", "py", "java", "cpp"];
+
+// codings.forEach(function (value)  {
+//   console.log(value);
+// });
+
+// codings.forEach((item) => {
+//   console.log(item);
+// });
+
+// function printme(item) {
+//   console.log(item);
+// }
+
+// codings.forEach(printme);
+
+// codings.forEach((item, index, arr) => {
+//   console.log(item, index, arr);
+// });
+
+const mycoding = [
+  {
+    languageName: "javascript",
+    languageFilename: "js",
+  },
+
+  {
+    languageName: "c++",
+    languageFilename: "cp",
+  },
+  {
+    languageName: "java",
+    languageFilename: "java",
+  },
+  {
+    languageName: "Python",
+    languageFilename: "py",
+  },
+];
+
+mycoding.forEach((item) => {
+  console.log(item.languageName);
+});

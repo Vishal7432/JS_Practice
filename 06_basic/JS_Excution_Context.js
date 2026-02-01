@@ -22,7 +22,7 @@ let result = addNum(val1, val2);
 let result2 = addNum(10, 5);
 
 // UnderStanding code line by
-
+// js run two phases
 // Step 1
 // Global Execution => this
 
@@ -52,3 +52,5 @@ let result2 = addNum(10, 5);
 // num1 = 10
 // num2 = 5
 // total = 15  ------->   ye total Global Execution
+
+// callStack

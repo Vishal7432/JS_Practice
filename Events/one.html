@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Events</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>JavaScript Events</h2>
+    <p>
+      An event is an action that occurs in the browser, such as when a user
+      clicks a button, submits a form, or hovers over an element. JavaScript can
+      be used to respond to these events and create interactive web pages.
+    </p>
+
+    <h3>Common JavaScript Events</h3>
+    <ul>
+      <li><strong>click:</strong> Triggered when an element is clicked.</li>
+      <li>
+        <strong>mouseover:</strong> Triggered when the mouse pointer is moved
+        over an element.
+      </li>
+      <li>
+        <strong>mouseout:</strong> Triggered when the mouse pointer is moved out
+        of an element.
+      </li>
+      <li><strong>keydown:</strong> Triggered when a key is pressed down.</li>
+      <li><strong>keyup:</strong> Triggered when a key is released.</li>
+      <li><strong>submit:</strong> Triggered when a form is submitted.</li>
+    </ul>
+
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // document.getElementById('owl').onclick = function(){   // ye feature kaam deta hai but ye purana tareeka hai propogetion nahi rok pata
+    //     alert("owl clicked")
+    // }
+
+    // attachEvent()
+    // jQuery - on
+
+    // these learn more about event object properties by own
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // ye naya tareeka hai jo propogetion rok pata hai
+    // document.getElementById("owl").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     // alert("owl clicked again");
+    //     console.log(e);
+    //   },
+    //   false,
+    // );
+
+    // ye event propagation hai jo parent element pe bhi event ko trigger karta hai
+    // jab child element pe event hota hai
+    // isko rokne ke liye e.stopPropagation() use karte hai
+    // ese hum kehte hai event bubbling  (ye default hota hai)
+
+    // capturing phase ko samajhne ke liye true karte hai neeche example me
+    // jab true karte hai to pehle parent element pe event trigger hota hai
+    // fir child element pe event trigger hota hai
+    // ise hum kehte hai event capturing
+    // agar mujhe event capturing rokna hai to false karte hai
+
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("clicked inside the ul");
+    //   },
+    //   false,
+    // );
+
+    // document.getElementById("owl").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("owl clicked");
+    //     e.stopPropagation(); // ye event bubbling ko rokta hai
+    //   },
+    //   false,
+    // );
+
+    // document.getElementById("google").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     e.preventDefault(); // ye default action ko rokta hai
+    //     e.stopPropagation();
+    //     console.log("google link clicked");
+    //   },
+    //   false,
+    // );
+
+    // event spilover example
+    document.querySelector("#images").addEventListener(
+      "click",
+      function (e) {
+        if (e.target.tagName === "IMG") {
+          console.log(e.target.id);
+          let removeIt = e.target.parentNode;
+          removeIt.remove();
+          // removeIt.parentNode.removeChild(removeIt); // ye bhi same kaam karta hai
+        }
+      },
+      false,
+    );
+  </script>
+</html>

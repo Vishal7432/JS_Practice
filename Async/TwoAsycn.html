@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asycn Practice setInverval</title>
+  </head>
+  <body>
+    <h1>Practice with Async concept</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    const sayData = (str) => {
+      console.log(str, new Date().toLocaleTimeString());
+    };
+
+    let intervalId; // Variable to store the interval ID
+
+    const startStop = function () {
+      return setInterval(sayData, 1000, "Hello Vishal");
+    };
+
+    document.querySelector("#start").addEventListener("click", () => {
+      if (!intervalId) {
+        // Only start if not already running
+        intervalId = startStop();
+      }
+    });
+    document.querySelector("#stop").addEventListener("click", () => {
+      if (intervalId) {
+        // Only clear if interval is running
+        clearInterval(intervalId);
+        intervalId = null; // Reset the ID
+      }
+    });
+  </script>
+</html>

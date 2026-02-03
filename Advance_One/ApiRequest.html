@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=0, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .card {
+      border: 2px solid white;
+      width: 200px;
+      height: 250px;
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px;
+    }
+  </style>
+  <body style="background-color: #212121; color: #fff">
+    <div>
+      <h1>API Request</h1>
+      <p>This section covers how to make API requests in your application.</p>
+      <p>Old request XMLrequest</p>
+      <p>
+        The XMLHttpRequest.readyState property returns the state an
+        XMLHttpRequest client is in. An XHR client exists in one of the
+        following states: Value State Description <b></b> 0 UNSENT Client has
+        been created. open() not called yet. <b></b>1 OPENED open() has been
+        called. <b></b>2 HEADERS_RECEIVED send() has been called, and headers
+        and status are available. <b></b>3 LOADING Downloading; responseText
+        holds partial data.<b></b> 4 DONE The operation is complete.
+      </p>
+      <div class="card">
+        <span class="userName"></span>
+        <span class="follower"> </span>
+      </div>
+      <button>Click</button>
+    </div>
+  </body>
+  <script>
+    const url = "https://api.github.com/users/Vishal7432";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+
+    // xhr.onreadystatechange = function () {
+    //   console.log(xhr.readyState);
+    //   if (xhr.readyState === 4) {
+    //     const data = JSON.parse(xhr.responseText);
+    //     console.log(data);
+    //     console.log(data.followers);
+    //   }
+    // };
+    // xhr.send();
+
+    // document.querySelector("button").onclick = function () {
+    //   xhr.onreadystatechange = function () {
+    //     console.log(xhr.readyState);
+    //     if (xhr.readyState === 4) {
+    //       const data = JSON.parse(xhr.responseText);
+    //       console.log(data);
+    //       const addImg = document.querySelector(".card");
+    //       addImg.innerHTML += `<img src=${data.avatar_url} width="200px" height="200px"/>`;
+    //       document.querySelector(".userName").innerText = data.name;
+    //       document.querySelector(".follower").innerText =
+    //         `Followers :  ${data.followers}`;
+    //     }
+    //   };
+    //   xhr.send();
+    // };
+    document.querySelector("button").addEventListener("click", function () {
+      xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+          const data = JSON.parse(xhr.responseText);
+          console.log(data);
+          const addImg = document.querySelector(".card");
+          addImg.innerHTML += `<img src=${data.avatar_url} width="200px" height="200px"/>`;
+          document.querySelector(".userName").innerText = data.name;
+          document.querySelector(".follower").innerText =
+            `Followers :  ${data.followers}`;
+        }
+      };
+      xhr.send();
+    });
+  </script>
+</html>

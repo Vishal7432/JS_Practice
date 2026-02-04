@@ -64,3 +64,47 @@ promiseFour
   .finally(() => {
     console.log("The promise is either resolved or rejected");
   });
+
+const promiseFive = new Promise(function (resolve, reject) {
+  setTimeout(function () {
+    let error = true;
+    if (!error) {
+      resolve({
+        email: "amitgupta@gmail.com",
+        password: "123",
+      });
+    } else reject(`ERROR: Invalid username and password`);
+  }, 1000);
+});
+
+async function consumePromiseFive() {
+  try {
+    const reponse = await promiseFive;
+    console.log(reponse);
+  } catch (error) {
+    console.log(error);
+  }
+}
+// consumePromiseFive();
+
+// async function getAllUser(params) {
+//   try {
+//     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+//     const data = await response.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+// getAllUser();
+
+fetch("https://jsonplaceholder.typicode.com/posts")
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });

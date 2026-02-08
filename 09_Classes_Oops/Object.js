@@ -17,7 +17,7 @@ createUser.prototype.increment = function () {
   this.score++;
 };
 createUser.prototype.printMe = function () {
-  console.log(`price is ${this.score}`);
+  console.log(`price is ${this.score}`); /// jisne bhi bulaya uska this means jo pahle bulya score ko uska increament hoga
 };
 
 const chai = new createUser("chai", 25);

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clouser</title>
+  </head>
+  <body style="background-color: #212121">
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+  </body>
+  <script>
+    // function init() {
+    //   var name = "Mozilla"; // name is a local variable created by init
+    //   function displayName() {
+    //     // displayName() is the inner function, that forms a closure
+    //     console.log(name); // use variable declared in the parent function
+    //   }
+    //   displayName();
+    // }
+    // init();
+
+    // function outer(){
+    //     let username = "hitesh"
+    //     console.log("OUTER", secret);
+    //     function inner(){
+    //         let secret = "my123"
+    //         console.log("inner", username);
+    //     }
+    //     function innerTwo(){
+    //         console.log("innerTwo", username);
+    //         console.log(secret);
+    //     }
+    //     inner()
+    //     innerTwo()
+
+    // }
+    // outer()
+    // console.log("TOO OUTER", username);
+  </script>
+  <script>
+    // document.getElementById("orange").onclick = function () {
+    //   document.body.style.backgroundColor = "orange";
+    // };
+    // document.getElementById("green").onclick = function () {
+    //   document.body.style.backgroundColor = "green";
+    // };
+
+    function clickHandler(color) {
+      //   document.body.style.backgroundColor = `${color}`;
+      return function () {
+        document.body.style.backgroundColor = `${color}`;
+      };
+    }
+
+    document
+      .getElementById("orange")
+      .addEventListener("click", clickHandler("red"));
+    document
+      .getElementById("green")
+      .addEventListener("click", clickHandler("blue"));
+
+    // document.getElementById("orange").onclick = clickHandler("orange");
+    // document.getElementById("green").onclick = clickHandler("green");
+  </script>
+</html>

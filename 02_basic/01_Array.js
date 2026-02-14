@@ -24,10 +24,10 @@ let myArr = [1, 2, 3, 4, 5, 6];
 // myArr.pop();
 // console.log("After Pop: ", myArr);
 
-// myArr.unshift(0);
-// console.log("After Unshift: ", myArr);
-// myArr.shift();
-// console.log("After Shift: ", myArr);
+myArr.unshift(0);
+console.log("After Unshift: ", myArr);
+myArr.shift();
+console.log("After Shift: ", myArr);
 
 // console.log("Index of 4: ", myArr.indexOf(4));
 // console.log("Index of 10: ", myArr.indexOf(10)); // -1
@@ -82,4 +82,3 @@ function squareNumbers(arr) {
 let numbers = [1, 2, 3, 4, 5];
 let squaredNumbers = squareNumbers(numbers);
 console.log("Squared Numbers: ", squaredNumbers);
-
